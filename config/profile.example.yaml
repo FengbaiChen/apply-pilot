@@ -1,0 +1,98 @@
+# Copy to profile.yaml and supply your facts. Blank values require human input.
+personal:
+  full_name: null
+  first_name: null
+  last_name: null
+  preferred_name: null
+  email: null
+  phone: null
+  city: null
+  state: null
+  country: null
+  linkedin: null
+  address_line1: null
+  postal_code: null
+phone:
+  device_type: Home Cellular
+  country_code: "+1"
+  number: null
+work_authorization:
+  authorized_to_work_us: null
+  require_future_sponsorship: null
+preferences:
+  willing_to_relocate: null
+demographics:
+  gender: null
+  ethnicity: null
+  hispanic_or_latino: null
+  veteran_status: null
+  disability: null
+education:
+  school: null
+  school_aliases: []
+  unsafe_school_matches: []
+  degree: null
+  major: null
+  major_aliases: []
+  graduation_month: null
+  graduation_year: null
+  start_month: null
+  start_year: null
+  gpa: null
+application:
+  resume_path: null
+links:
+  github: null
+  linkedin: null
+# Only these explicit facts may be used in optional generated prose.
+experience_facts: []
+# Explicit control-panel replies are saved here automatically. Edit/delete entries
+# and restart to change/forget them. General answers can be reused across applications;
+# recognized prose answers are restricted to their original application URL.
+saved_answers: []
+work_experiences:
+  - company: null
+    job_title: null
+    location: null
+    start_month: null
+    start_year: null
+    end_month: null
+    end_year: null
+    current: false
+    description: null
+  - company: null
+    job_title: null
+    location: null
+    start_month: null
+    start_year: null
+    end_month: null
+    end_year: null
+    current: false
+    description: null
+  - company: null
+    job_title: null
+    location: null
+    start_month: null
+    start_year: null
+    end_month: null
+    end_year: null
+    current: false
+    description: null
+  - company: null
+    job_title: null
+    location: null
+    start_month: null
+    start_year: null
+    end_month: null
+    end_year: null
+    current: false
+    description: null
+  - company: null
+    job_title: null
+    location: null
+    start_month: null
+    start_year: null
+    end_month: null
+    end_year: null
+    current: false
+    description: null

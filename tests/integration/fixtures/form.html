@@ -1,0 +1,28 @@
+<!doctype html><html><body><h1>Application details</h1>
+<form id="application" onsubmit="event.preventDefault(); window.submitted=true">
+<label>Full name<input name="full_name" required></label>
+<label>Email<input name="email" type="email" required value="wrong@example.test"></label>
+<label>Phone<input name="phone" type="tel" required></label>
+<label>School<select name="school" required><option value="">Choose</option><option value="wrong" selected>University of Michigan-Flint</option><option value="correct">University of Michigan</option></select></label>
+<label>Major<input name="major" value="Data Science" required></label>
+<label>Degree<input name="degree" required></label>
+<label>Graduation date<input name="graduation" type="month" required></label>
+<fieldset><legend>Will you require sponsorship?</legend><label><input type="radio" name="sponsor" value="y" required>Yes</label><label><input type="radio" name="sponsor" value="n" checked>No</label></fieldset>
+<fieldset><legend>Are you authorized to work in the US?</legend><label><input type="radio" name="auth" value="y" required>Yes</label><label><input type="radio" name="auth" value="n">No</label></fieldset>
+<label>Resume<input type="file" name="resume" required></label>
+<button type="button" id="next">Save and Continue</button></form>
+<script>
+window.submitted=false;
+document.querySelector('#next').onclick=()=>{
+  if(!document.querySelector('form').reportValidity())return;
+  const name=document.querySelector('[name=full_name]').value;
+  const email=document.querySelector('[name=email]').value;
+  document.body.replaceChildren();
+  const h=document.createElement('h1'); h.textContent='Review application'; document.body.append(h);
+  const dl=document.createElement('dl');
+  for(const [label,value] of [['Full name',name],['Email',email]]){
+    const dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;dd.textContent=value;dl.append(dt,dd);
+  } document.body.append(dl);
+  const submit=document.createElement('button');submit.textContent='Submit Application';submit.onclick=()=>window.submitted=true;document.body.append(submit);
+};
+</script></body></html>

@@ -1,0 +1,12 @@
+browser_profile_dir: data/browser-profile
+browser_headless: false
+browser_timeout_ms: 10000
+autofill_wait_ms: 2500
+settle_timeout_ms: 8000
+database_path: data/applypilot.sqlite3
+max_pages: 25
+max_option_iterations: 20
+option_stale_limit: 3
+llm_enabled: false
+# Optional writing guidance. Missing/empty files fall back to the built-in prompt.
+llm_prompt_path: null

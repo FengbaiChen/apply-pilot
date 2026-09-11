@@ -1,0 +1,7 @@
+<!doctype html><html><body><button type="button" role="combobox" aria-label="School" aria-controls="schools" data-virtualized="true" id="school">Choose school</button><div id="schools" role="listbox" style="height:90px;overflow:auto;position:relative" hidden><div style="height:500px" id="spacer"></div><div id="viewport" style="position:absolute;top:0"></div></div><script>
+const list=document.querySelector('#schools'),viewport=document.querySelector('#viewport'),trigger=document.querySelector('#school');
+function render(){const i=Math.floor(list.scrollTop/80);viewport.style.top=list.scrollTop+'px';viewport.innerHTML=`<div role="option">School ${i}</div><div role="option">School ${i+1}</div>`;}
+trigger.onclick=()=>{list.hidden=false;list.scrollTop=0;render();};list.onscroll=render;
+trigger.onkeydown=e=>{if(e.key==='Escape')list.hidden=true;};
+viewport.onclick=e=>{trigger.textContent=e.target.textContent;list.hidden=true;};
+</script></body></html>

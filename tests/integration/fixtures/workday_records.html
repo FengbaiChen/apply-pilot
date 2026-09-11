@@ -1,0 +1,16 @@
+<!doctype html><html><body>
+<h3>My Experience</h3>
+<div role="group" aria-labelledby="work-heading"><h3 id="work-heading">Work Experience</h3><div id="cards"></div><button type="button" id="work-add" onclick="addWork()">Add</button></div>
+<div role="group" aria-labelledby="education-heading"><h3 id="education-heading">Education</h3><button type="button" onclick="window.educationAdds++">Add</button></div>
+<script>
+window.workAdds=0;window.educationAdds=0;
+window.addWork=()=>{
+ const n=document.querySelector('#cards').children.length+1;
+ const card=document.createElement('div');card.setAttribute('role','group');card.setAttribute('aria-labelledby','work-'+n);
+ card.innerHTML=`<h4 id="work-${n}">Work Experience ${n}</h4>
+ <div data-automation-id="formField-jobTitle" data-fkit-id="workExperience-${n}--jobTitle"><label for="title-${n}">Job Title*</label><input id="title-${n}" name="jobTitle" required></div>
+ <div data-automation-id="formField-company" data-fkit-id="workExperience-${n}--company"><label for="company-${n}">Company*</label><input id="company-${n}" name="company" required></div>
+ <div data-automation-id="formField-startDate" data-fkit-id="workExperience-${n}--startDate"><label>From*</label><div role="group"><input aria-label="Month" data-automation-id="dateSectionMonth-input"><input aria-label="Year" data-automation-id="dateSectionYear-input"></div></div>`;
+ document.querySelector('#cards').append(card);document.querySelector('#work-add').innerText='Add Another';window.workAdds++;
+};
+</script></body></html>

@@ -1,0 +1,6 @@
+<!doctype html><html><body><label id="school-label">School</label><button type="button" role="combobox" aria-labelledby="school-label" aria-controls="schools" aria-required="true" id="school">Choose school</button><div id="schools" role="listbox" hidden></div><script>
+const trigger=document.querySelector('#school'),list=document.querySelector('#schools');
+trigger.onclick=()=>{list.hidden=false;setTimeout(()=>{list.innerHTML='<div role="option" data-value="wrong">University of Michigan-Flint</div><div role="option" data-value="right">University of Michigan</div>';},50);};
+list.onclick=e=>{trigger.textContent=e.target.textContent;list.hidden=true;};
+trigger.onkeydown=e=>{if(e.key==='Escape')list.hidden=true;};
+</script></body></html>

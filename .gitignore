@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.env
+config/profile.yaml
+config/settings.yaml
+config/llm-prompt.md
+data/*
+!data/.gitkeep
+.coverage

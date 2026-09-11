@@ -1,0 +1,5 @@
+<!doctype html><html><body><label>School<input id="school" role="combobox" aria-controls="results" required></label><div id="results" role="listbox" hidden></div><script>
+const field=document.querySelector('#school'),results=document.querySelector('#results');window.queries=[];
+field.oninput=()=>{window.queries.push(field.value);results.hidden=false;results.replaceChildren();if(field.value.toLowerCase().includes('michigan')){const item=document.createElement('div');item.role='option';item.textContent='University of Michigan';item.onclick=()=>{field.value=item.textContent;results.hidden=true;};results.append(item);}};
+field.onkeydown=e=>{if(e.key==='Escape')results.hidden=true;};
+</script></body></html>

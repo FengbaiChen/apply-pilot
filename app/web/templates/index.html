@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ApplyPilot · Workday assistant</title><link rel="stylesheet" href="/static/styles.css"><script src="/static/app.js" defer></script></head>
+<body><main>
+<header><span class="mark">AP</span><div><h1>ApplyPilot</h1><p>Your application. Your final say.</p></div><span class="local">LOCAL WORKSPACE</span></header>
+<section class="intro"><p class="eyebrow">WORKDAY APPLICATION ASSISTANT</p><h2>A little less repetition.<br>A lot more control.</h2><p>Fill and verify your application in a real browser. You review the details and make the final submission.</p></section>
+<section class="card"><form id="start-form">
+<label for="url">Workday job application URL</label><div class="input-row"><input id="url" type="url" placeholder="https://company.wd5.myworkdayjobs.com/…" required><button id="start" type="submit">Start Application <span aria-hidden="true">↗</span></button></div>
+<label for="platform">Application platform</label><select id="platform"><option value="workday">Workday</option></select>
+<details class="writing-options"><summary>Writing guidance for this application (optional)</summary>
+<label for="reference-prompt">LLM reference prompt</label><textarea id="reference-prompt" maxlength="8000" rows="3" placeholder="For example: write 120 words, use a direct tone, emphasize my relevant backend experience."></textarea>
+<label for="application-context">Additional company and role context</label><textarea id="application-context" maxlength="16000" rows="4" placeholder="Optional facts to add to the job page context."></textarea></details>
+</form><div id="capabilities" class="hint" aria-live="polite"></div><p class="hint">Uses your local profile. Login and security checks stay in your hands.</p><p id="error" role="alert"></p></section>
+<section class="card" id="session" hidden aria-live="polite"><div class="status-row"><h3>Current application</h3><span id="status" class="badge"></span></div><p id="action"></p><p id="human" class="notice" hidden></p>
+<form id="question-form" hidden><h3>Your answers are needed</h3><p class="hint">Answers are filled into the browser now and kept pending until you approve the final Review.</p><div id="questions"></div><button type="submit" id="answer-submit">Save answers &amp; continue</button></form>
+<div id="confirmation" hidden><label class="check"><input type="checkbox" id="confirm"> I reviewed and confirm the current values I supplied manually in the application browser.</label></div>
+<div class="actions"><button id="resume" hidden>Resume</button><button class="secondary" id="stop">Stop &amp; close browser</button></div></section>
+<section class="card" id="review" hidden><div class="status-row"><h3>Application audit</h3><span id="audit-summary"></span></div><p class="hint">Review or edit generated and reused answers. Approval only saves answers; submission is always manual in Workday.</p><ul id="findings"></ul><form id="review-form" hidden><h3>Answers requiring approval</h3><div id="review-answers"></div><button type="submit">Approve answers &amp; save</button></form></section>
+<footer>One Workday application at a time. Final submission is always yours.</footer>
+</main></body></html>
